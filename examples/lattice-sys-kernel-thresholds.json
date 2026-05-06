@@ -1,0 +1,17 @@
+{
+  "repo": "lattice-sys-kernel-core",
+  "thresholds": {
+    "signal": 3,
+    "slack": 2,
+    "confidence": 1,
+    "drag": 2,
+    "ship": 173,
+    "watch": 97
+  },
+  "terms": [
+    "allocation pressure",
+    "dirty state",
+    "guard slack",
+    "layout drift"
+  ]
+}
