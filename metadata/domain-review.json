@@ -1,0 +1,73 @@
+{
+  "repo": "lattice-sys-kernel-core",
+  "language": "R",
+  "category": "Systems programming",
+  "goal": "Build an R toolkit that studies kernel behavior through seeded input scenarios, with deterministic summary checks and no credentials or hosted services.",
+  "review_model": {
+    "terms": [
+      "allocation pressure",
+      "dirty state",
+      "guard slack",
+      "layout drift"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "allocation pressure",
+      "signal": 65,
+      "slack": 36,
+      "drag": 32,
+      "confidence": 55,
+      "score": 125,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "dirty state",
+      "signal": 66,
+      "slack": 45,
+      "drag": 28,
+      "confidence": 60,
+      "score": 153,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "guard slack",
+      "signal": 74,
+      "slack": 45,
+      "drag": 24,
+      "confidence": 86,
+      "score": 207,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "layout drift",
+      "signal": 73,
+      "slack": 21,
+      "drag": 29,
+      "confidence": 67,
+      "score": 147,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "allocation pressure",
+      "signal": 65,
+      "slack": 26,
+      "drag": 18,
+      "confidence": 88,
+      "score": 190,
+      "lane": "ship"
+    }
+  ]
+}
